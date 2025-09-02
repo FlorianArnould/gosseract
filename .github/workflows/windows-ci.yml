@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * 5'
-  # TODO: https://github.com/otiai10/gosseract/issues/262
+  # TODO: https://github.com/FlorianArnould/gosseract/issues/262
   # push:
   #   branches: [main, develop, windows/*]
   # pull_request:

@@ -11,8 +11,8 @@ RUN apk add tesseract-ocr-data-eng
 
 ENV GOPATH=/root/go
 
-ADD . ${GOPATH}/src/github.com/otiai10/gosseract
-WORKDIR ${GOPATH}/src/github.com/otiai10/gosseract
+ADD . ${GOPATH}/src/github.com/FlorianArnould/gosseract
+WORKDIR ${GOPATH}/src/github.com/FlorianArnould/gosseract
 
 ENV GOSSERACT_CPPSTDERR_NOT_CAPTURED=1
 CMD ["go", "test", "-v", "./..."]

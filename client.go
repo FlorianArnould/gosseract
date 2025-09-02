@@ -221,7 +221,7 @@ func (client *Client) SetVariable(key SettableVariable, value string) error {
 
 // SetPageSegMode sets "Page Segmentation Mode" (PSM) to detect layout of characters.
 // See official documentation for PSM here https://tesseract-ocr.github.io/tessdoc/ImproveQuality#page-segmentation-method
-// See https://github.com/otiai10/gosseract/issues/52 for more information.
+// See https://github.com/FlorianArnould/gosseract/issues/52 for more information.
 func (client *Client) SetPageSegMode(mode PageSegMode) error {
 	if client.api == nil {
 		return ErrClientNotConstructed
@@ -356,7 +356,9 @@ func (client *Client) Text() (out string, err error) {
 	if err = client.init(); err != nil {
 		return
 	}
-	out = C.GoString(C.UTF8Text(client.api))
+	text := C.UTF8Text(client.api)
+	out = C.GoString(text)
+	C.free(unsafe.Pointer(text))
 	if client.Trim {
 		out = strings.Trim(out, "\n")
 	}
@@ -372,7 +374,9 @@ func (client *Client) HOCRText() (out string, err error) {
 	if err = client.init(); err != nil {
 		return
 	}
-	out = C.GoString(C.HOCRText(client.api))
+	text := C.HOCRText(client.api)
+	out = C.GoString(text)
+	C.free(unsafe.Pointer(text))
 	return
 }
 

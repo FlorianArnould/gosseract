@@ -26,7 +26,7 @@ jobs:
         run: |
           freebsd-version
           mkdir -p ${GOPATH}/src/github.com/otiai10
-          cp -r .  ${GOPATH}/src/github.com/otiai10/gosseract
-          cd ${GOPATH}/src/github.com/otiai10/gosseract
+          cp -r .  ${GOPATH}/src/github.com/FlorianArnould/gosseract
+          cd ${GOPATH}/src/github.com/FlorianArnould/gosseract
           go get -v -t -d ./...
           go test -v -cover ./...

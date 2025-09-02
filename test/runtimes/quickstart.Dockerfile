@@ -10,7 +10,7 @@ RUN apt-get update -qq \
 WORKDIR $GOPATH/src/your-project
 RUN go mod init
 
-RUN go get -u -v -t github.com/otiai10/gosseract/v2
+RUN go get -u -v -t github.com/FlorianArnould/gosseract/v2
 
 # Test it!
-CMD ["go", "test", "-v", "github.com/otiai10/gosseract/v2"]
+CMD ["go", "test", "-v", "github.com/FlorianArnould/gosseract/v2"]

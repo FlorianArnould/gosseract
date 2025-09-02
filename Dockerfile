@@ -33,10 +33,10 @@ WORKDIR ${GOPATH}/src/github.com/ghost/cool-project
 RUN go mod init
 
 # Let's have gosseract in your project and test it.
-RUN go get -t github.com/otiai10/gosseract/v2
+RUN go get -t github.com/FlorianArnould/gosseract/v2
 
 # Now, you've got complete environment to play with "gosseract"!
-# For other OS, check https://github.com/otiai10/gosseract/tree/main/test/runtimes
+# For other OS, check https://github.com/FlorianArnould/gosseract/tree/main/test/runtimes
 
 # Try `docker run -it --rm otiai10/gosseract` to test this environment.
-CMD go test -v github.com/otiai10/gosseract/v2
+CMD go test -v github.com/FlorianArnould/gosseract/v2

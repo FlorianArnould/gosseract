@@ -23,7 +23,7 @@ RUN wget \
 ENV GOPATH /go
 
 RUN mkdir -p ${GOPATH}/src/github.com/otiai10
-ADD . ${GOPATH}/src/github.com/otiai10/gosseract
-WORKDIR ${GOPATH}/src/github.com/otiai10/gosseract
+ADD . ${GOPATH}/src/github.com/FlorianArnould/gosseract
+WORKDIR ${GOPATH}/src/github.com/FlorianArnould/gosseract
 
 CMD ["go", "test", "-v", "./..."]
